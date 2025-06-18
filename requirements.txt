@@ -1,7 +1,7 @@
-app.py
-requirements.txt
-recommendations.py
-kmeans_model.pkl
-scaler.pkl
-cluster_labels.pkl
-student_spending_clustered.csv
+streamlit
+pandas
+numpy
+plotly
+joblib
+scikit-learn
+seaborn
