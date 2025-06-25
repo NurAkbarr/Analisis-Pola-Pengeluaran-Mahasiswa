@@ -5,10 +5,13 @@ Aplikasi Data Mining untuk menganalisis pola pengeluaran mahasiswa dan memberika
 ## 🎯 Fitur Utama
 
 - **Prediksi Kategori Pengeluaran**: Mengklasifikasikan pengeluaran menjadi "Hemat", "Sedang", atau "Boros"
+- **Input Manual & Upload CSV**: Input data secara manual atau upload file CSV untuk analisis batch
 - **Visualisasi Interaktif**: Grafik dan chart untuk memahami pola pengeluaran
 - **Sistem Rekomendasi**: Tips personal berdasarkan kategori pengeluaran
 - **Perbandingan**: Membandingkan dengan rata-rata mahasiswa lain
 - **Budget Planning**: Rencana budget ideal sesuai kategori
+- **Export Hasil**: Download hasil analisis dalam format CSV
+- **Template CSV**: Download template untuk memudahkan input data
 
 ## 🛠️ Teknologi yang Digunakan
 
@@ -58,6 +61,7 @@ project/
 ├── README.md               # Dokumentasi ini
 ├── student_spending_data.csv        # Dataset yang digenerate
 ├── student_spending_clustered.csv   # Dataset dengan hasil clustering
+├── contoh_data_upload.csv          # Contoh file CSV untuk upload
 ├── kmeans_model.pkl        # Model K-Means yang sudah dilatih
 ├── scaler.pkl             # Scaler untuk preprocessing
 └── cluster_labels.pkl     # Label cluster
@@ -88,37 +92,54 @@ Dataset berisi 500 data simulasi mahasiswa dengan fitur:
 
 ## 📱 Cara Menggunakan Aplikasi
 
+### 📝 Input Manual
 1. **Buka aplikasi** di browser (biasanya http://localhost:8501)
-2. **Input data pengeluaran** di sidebar:
+2. **Pilih "Input Manual"** di sidebar
+3. **Input data pengeluaran** di sidebar:
    - Uang saku bulanan
    - Pengeluaran makanan
    - Pengeluaran transport
    - Pengeluaran hiburan
    - Semester saat ini
-3. **Klik "Analisis Pengeluaran"**
-4. **Lihat hasil**:
-   - Kategori pengeluaran Anda
-   - Visualisasi breakdown pengeluaran
-   - Tips dan rekomendasi personal
-   - Rencana budget ideal
-   - Perbandingan dengan mahasiswa lain
+4. **Klik "Analisis Pengeluaran"**
+5. **Lihat hasil** analisis individual
+
+### 📁 Upload CSV
+1. **Pilih "Upload CSV"** di sidebar
+2. **Download template CSV** (opsional) untuk format yang benar
+3. **Siapkan file CSV** dengan kolom:
+   - `uang_saku`: Uang saku bulanan (Rp)
+   - `pengeluaran_makanan`: Pengeluaran makanan (Rp)
+   - `pengeluaran_transport`: Pengeluaran transport (Rp)
+   - `pengeluaran_hiburan`: Pengeluaran hiburan (Rp)
+   - `semester`: Semester (1-8)
+4. **Upload file CSV** dan klik "Analisis Data CSV"
+5. **Lihat hasil**:
+   - Statistik ringkasan semua data
+   - Distribusi kategori pengeluaran
+   - Detail analisis individual
+   - Export hasil ke CSV
 
 ## 🎨 Screenshot
 
 ### Input Data
-- Form input di sidebar dengan validasi
-- Real-time calculation dan feedback
+- **Input Manual**: Form input di sidebar dengan validasi dan real-time feedback
+- **Upload CSV**: Upload file CSV untuk analisis batch dengan template download
 
 ### Hasil Analisis
-- Metric cards dengan informasi keuangan
-- Kategori pengeluaran dengan color coding
-- Pie chart breakdown pengeluaran
-- Bar chart perbandingan
+- **Individual**: Metric cards, kategori pengeluaran, visualisasi breakdown
+- **Batch CSV**: Statistik ringkasan, distribusi kategori, tabel hasil detail
+- **Visualisasi**: Pie chart, bar chart, perbandingan dengan rata-rata
 
 ### Rekomendasi
 - Tips personal berdasarkan kategori
 - Warning untuk pengeluaran berlebihan
 - Budget planning dengan alokasi ideal
+
+### Export & Template
+- Download template CSV untuk input data
+- Export hasil analisis ke CSV
+- Export detail lengkap untuk dokumentasi
 
 ## 📈 Hasil yang Diharapkan
 
@@ -193,6 +214,9 @@ pip install --upgrade [nama_library]
 ## 🚀 Future Improvements
 
 ### Fitur Tambahan
+- [x] Upload CSV untuk analisis batch
+- [x] Download template CSV
+- [x] Export hasil analisis ke CSV
 - [ ] Export hasil analisis ke PDF
 - [ ] Histori pengeluaran dan tracking progress
 - [ ] Integrasi dengan e-wallet untuk auto-input
